@@ -27,10 +27,10 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <!--eureka客户端依赖-->
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>-->
+        </dependency>
         <!-- nacos客户端依赖包 -->
 <!--        <dependency>
             <groupId>com.alibaba.cloud</groupId>

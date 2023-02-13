@@ -8,6 +8,8 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   application:
     name: orderservice
+
+
 #  cloud:
 #    nacos:
 #      server-addr: nacos:8848 # nacos服务地址
@@ -39,4 +41,10 @@ mybatis:
 #  httpclient:
 #    enabled: true # 支持HttpClient的开关
 #    max-connections: 200 # 最大连接数
+eureka:
+    client:
+      service-url:
+        defaultZone: http://127.0.0.1:8761/eureka
+
+
 #    max-connections-per-route: 50 # 单个路径的最大连接数

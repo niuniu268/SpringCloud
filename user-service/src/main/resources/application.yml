@@ -7,6 +7,15 @@ spring:
     password: louis
     driver-class-name: com.mysql.jdbc.Driver
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+
+
+
+
 #  shardingsphere:
 #    sharding:
 #      default-database-strategy:

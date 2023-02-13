@@ -3,8 +3,10 @@ package cn.itcast.user.web;
 import cn.itcast.user.config.PatternProperties;
 import cn.itcast.user.pojo.User;
 import cn.itcast.user.service.UserService;
+import com.netflix.discovery.EurekaClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -21,6 +23,8 @@ public class UserController {
 
     // @Value("${pattern.dateformat}")
     // private String dateformat;
+    @Autowired
+    private EurekaClient eurekaClient;
 
     @Autowired
     private PatternProperties properties;
