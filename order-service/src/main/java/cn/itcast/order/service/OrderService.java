@@ -1,13 +1,14 @@
 package cn.itcast.order.service;
 
 
-import cn.itcast.demo.clients.UserClient;
-import cn.itcast.demo.pojo.User;
+import cn.itcast.controller.ClientsController;
 import cn.itcast.order.mapper.OrderMapper;
 import cn.itcast.order.pojo.Order;
 
+import cn.itcast.pojo.Clients;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,16 +19,22 @@ public class OrderService {
 
     @Autowired
     private OrderMapper orderMapper;
+    @Autowired
+    private ClientsController clientsController;
 
 
 
 
-/*    public Order queryOrderById(Long orderId){
+    public Order queryOrderById(Long orderId){
 
         Order order = orderMapper.findById( orderId );
 
+        Clients clients = clientsController.findById( order.getUserId( ) );
+
+        order.setUser( clients );
+
         return order;
-    }*/
+    }
 
 /*    @Autowired
     private UserClient userClient;*/
@@ -43,7 +50,7 @@ public class OrderService {
         return order;
     }*/
 
-    @Autowired
+/*    @Autowired
     private RestTemplate restTemplate;
 
     public Order queryOrderById(Long orderId) {
@@ -58,5 +65,5 @@ public class OrderService {
         order.setUser(user);
         // 4.返回
         return order;
-    }
+    }*/
 }
