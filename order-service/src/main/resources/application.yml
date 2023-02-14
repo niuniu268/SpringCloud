@@ -9,6 +9,17 @@ spring:
   application:
     name: orderservice
 
+mybatis:
+  type-aliases-package: cn.itcast.user.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+
 
 #  cloud:
 #    nacos:
@@ -16,10 +27,7 @@ spring:
 ##      discovery:
 ##        namespace: 4d6ce343-9e1b-44df-a90f-2cf2b6b3d177 # dev环境
 ##        ephemeral: false # 是否是临时实例
-mybatis:
-  type-aliases-package: cn.itcast.user.pojo
-  configuration:
-    map-underscore-to-camel-case: true
+
 #logging:
 #  level:
 #    cn.itcast: debug
@@ -41,10 +49,9 @@ mybatis:
 #  httpclient:
 #    enabled: true # 支持HttpClient的开关
 #    max-connections: 200 # 最大连接数
-eureka:
-    client:
-      service-url:
-        defaultZone: http://127.0.0.1:8761/eureka
-
-
 #    max-connections-per-route: 50 # 单个路径的最大连接数
+ribbon:
+  eager-load:
+    clients:
+      - userservice
+    enabled: true
